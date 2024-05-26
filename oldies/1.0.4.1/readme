@@ -1,0 +1,11 @@
+this exe (turkish) is compiled with three files:
+
+1.0.4.1 - tr.cpp
+dialogs_tr.cpp
+dialogs_tr.h
+
+this exe (english) is compiled with three files:
+
+1.0.4.1 - en.cpp
+dialogs_en.cpp
+dialogs_en.h
