@@ -236,7 +236,7 @@ const char* vGeneral_en[]
 const char* extras_en[]
 {
 	//Extras
-	"Press enter to continue...",
+	"Press ENTER to continue...",
 };
 
 
@@ -247,8 +247,8 @@ void About_EN(void)
 	<< "	ABOUT" << "\n\n"
 	<< "Version 1.0.4.3 (English)" << '\n'
 	<< "[Release Date : 16.02.2025]" << "\n\n"
-	<< "Made by Emir Unlu(@emirunlusoftware)" << '\n'
-	<< "github.com / emirunlusoftware" << "\n\n"
+	<< "Made by Emir Unlu (@emirunlusoftware)" << '\n'
+	<< "github.com/emirunlusoftware" << "\n\n"
 	<< "English Translation by : Emir Unlu (@emirunlusoftware)" << "\n\n"
 	<< menu_en[10] << '\n';
 }

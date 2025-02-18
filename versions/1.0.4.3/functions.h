@@ -33,9 +33,7 @@ extern Dialogs dialogs;
 extern void cin_error(string& defective_input);
 extern bool isnumber(string param_input);
 
-extern void xp_calculator(long long seviye, long long seviye2, long long toplam, long long toplam2,
-long long xp, long long xp2,
-long long islem, char method);
+extern void xp_calculator(long long seviye, long long seviye2, long long xp, long long xp2, char method);
 
 extern bool coin_value(string& times);
 extern void localization(int country_code);

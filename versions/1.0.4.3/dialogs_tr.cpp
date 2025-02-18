@@ -72,7 +72,7 @@ const char* calc_coin_tr[]
 	"	Şef",
 	"+Tamamlanan siparişler: ",
 	"SONUÇLAR",
-	"En az: ",
+	"En az:	",
 	"Ortalama: ",
 	"En çok: ",
 	"!HATA: 0 İLE 999999 ARASINDA BİR DEĞER GİRİN!",

@@ -7,10 +7,12 @@
 #include "dialogs_tr.h" //Turkish translation
 //#include "dialogs_xx.h"
 
-using std::cout, std::cin;
+using std::cout;
+using std::cin;
 using std::string;
 using std::endl;
-using std::stoi, std::stoll;
+using std::stoi;
+using std::stoll;
 
 
 int main()
@@ -58,7 +60,7 @@ main_x:
 			break;
 		}
 
-		xp_calculator(seviye, 0, 0, 0, xp, 0, 0, '1');
+		xp_calculator(seviye, 0, xp, 0, '1');
 		cout << dialogs.menu[9] << '\n' << dialogs.menu[10] << '\n';
 		do
 		{
@@ -113,7 +115,7 @@ main_x:
 			xp2 = stoll(input);
 			break;
 		}
-		xp_calculator(seviye, 0, 0, 0, xp, xp2, 0, '2');
+		xp_calculator(seviye, 0, xp, xp2, '2');
 		cout << dialogs.menu[9] << '\n' << dialogs.menu[10] << '\n';
 		do
 		{
@@ -181,7 +183,7 @@ main_x:
 			xp2 = stoi(input);
 			break;
 		}
-		xp_calculator(seviye, seviye2, 0, 0, xp, xp2, 0, '3');
+		xp_calculator(seviye, seviye2, xp, xp2, '3');
 		cout << dialogs.menu[9] << '\n' << dialogs.menu[10] << '\n';
 		do
 		{

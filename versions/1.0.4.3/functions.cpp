@@ -4,7 +4,8 @@
 #include "dialogs_tr.h"
 #include "functions.h"
 
-using std::cout, std::cin;
+using std::cout;
+using std::cin;
 using std::string;
 
 
@@ -40,38 +41,42 @@ bool isnumber(string param_input)
 	return true;
 }
 
-void xp_calculator(long long seviye, long long seviye2, long long toplam,
-long long toplam2, long long xp, long long xp2,
-long long islem, char method)
+void xp_calculator(long long seviye, long long seviye2, long long xp, long long xp2, char method)
 {
-	toplam = ((seviye - 1) * seviye / 2) * 2000 + (seviye - 1) * 500;
+	long long toplam = (((seviye - 1) * seviye / 2) * 2000 + (seviye - 1) * 500) + xp;
+	long long toplam2 = 0;
 
-	if (method == '1') /* (1)Find My Total XP */
+	switch (method)
 	{
-		toplam += xp;
-		cout << '\n' << calc_xp_en[5] << toplam << "\n\n";
-	}
-	else if (method == '2') /* (2)Forward-Backward Calculation */
-	{
-		int k = 1;
-		toplam2 = toplam + xp + xp2;
-		for (; ;)
+		case '1': /* (1)Find My Total XP */
 		{
-			islem = (k * 2000) + 500;
-			if (toplam2 < islem)
-				break;
-			toplam2 -= islem;
-			k += 1;
+			cout << '\n' << dialogs.calc_xp[5] << toplam << "\n\n";
+			break;
 		}
-		cout << '\n' << calc_xp_en[10] << k << " (" << toplam2 << "/" << islem << ")" << "\n\n";
-	}
-	else if (method == '3') /* (3)Difference Between Two Levels */
-	{
-		toplam2 = ((seviye2 - 1) * seviye2 / 2) * 2000 + (seviye2 - 1) * 500;
-		toplam += xp; toplam2 += xp2;
+		case '2': /* (2)Forward-Backward Calculation */
+		{
+			long long islem;
+			int k = 1;
+			toplam2 = toplam + xp2;
+			for (; ;)
+			{
+				islem = (k * 2000) + 500;
+				if (toplam2 < islem)
+					break;
+				toplam2 -= islem;
+				k += 1;
+			}
+			cout << '\n' << dialogs.calc_xp[10] << k << " (" << toplam2 << "/" << islem << ")" << "\n\n";
+			break;
+		}
+		case '3': /* (3)Difference Between Two Levels */
+		{
+			toplam2 = (((seviye2 - 1) * seviye2 / 2) * 2000 + (seviye2 - 1) * 500) + xp2;
 
-		long long fark = (toplam2 - toplam) < 0 ? (toplam - toplam2) : (toplam2 - toplam);
-		cout << '\n' << calc_xp_en[16] << fark << " xp" << "\n\n";
+			long long fark = (toplam2 - toplam) < 0 ? (toplam - toplam2) : (toplam2 - toplam);
+			cout << '\n' << dialogs.calc_xp[16] << fark << " xp" << "\n\n";
+			break;
+		}
 	}
 }
 
@@ -81,7 +86,7 @@ bool coin_value(string &times)
 	if (times.empty() || times.length() > 6 || !isnumber(times) || stoi(times) < 0 || stoi(times) > 999999)
 	{
 		cin_error(times);
-		cout << "\n\n" << calc_coin_en[24] << '\n';
+		cout << "\n\n" << dialogs.calc_coin[24] << '\n';
 		return 0;
 	}
 	else return 1;
@@ -140,7 +145,7 @@ Dialogs dialogs = get_dialogs(language);
 
 void localization(int country_code)
 {
-	switch(country_code)
+	switch (country_code)
 	{
 		case (1): /* English(default) */
 			setlocale(LC_ALL, "en_US.UTF-8");
