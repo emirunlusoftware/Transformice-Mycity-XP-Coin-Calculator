@@ -21,7 +21,7 @@ static HWND windowFocus;
 static int option;
 
 static bool clicked	= false,
-			calculate = false;
+                   calculate = false;
 
 
 
@@ -265,7 +265,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInstance, LPSTR lpCmdLine, in
 		return 1;
 	}
 
-	AdjustWindowRect(&WindowDimensions, WS_OVERLAPPEDWINDOW, FALSE);
+	AdjustWindowRect(&WindowDimensions, WS_OVERLAPPEDWINDOW &~ (WS_THICKFRAME | WS_MAXIMIZEBOX), FALSE);
 
 	int screenWidth = GetSystemMetrics(SM_CXSCREEN);
 	int screenHeight = GetSystemMetrics(SM_CYSCREEN);
