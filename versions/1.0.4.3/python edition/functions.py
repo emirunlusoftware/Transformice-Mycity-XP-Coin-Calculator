@@ -467,6 +467,7 @@ def update_log():
 
 			elif option == "m":
 				intro()
+				return
 
 
 
